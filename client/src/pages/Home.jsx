@@ -14,14 +14,31 @@ const Home = () => {
     const snap = useSnapshot(state);
   return (
     <AnimatePresence>
+
         {snap. intro && (
             <motion.section className='home' {...slideAnimation('left')}>
-                <motion.header {...slideAnimation('down')}>
+                <motion.header {...slideAnimation('down')}
+                 className='w-full flex justify-center items-center flex-col'>
+                            <nav className='flex justify-between items-center w-full mb-10 pt-3'>
+
                     <img
                       src='./threejs.png'
                       alt='logo'
                       className='w-8 h-8 object-contain'
                     />
+                    <button
+              type="button"
+              onClick={() => window.open('https://github.com/IMPranshu/ai-threejs')}
+              className='black_btn'
+             >
+                GitHub
+            </button>
+
+                    </nav>
+                    
+
+
+
                 </motion.header>
 
                 <motion.div className='home-content' {...headContainerAnimation}>
