@@ -20,7 +20,7 @@ router.route('/').get((req, res) => {
     res.status(200).json({ message: " Hello from DALL-E-ROutes"})
 })
 
-router.route('/'.post(async(req, res) => {
+router.route('/').post(async(req, res) => {
     try {
         const { prompt } = req.body;
 
@@ -40,5 +40,5 @@ router.route('/'.post(async(req, res) => {
         console.error(error);
         res.status(500).json({message: "Something wnet wrong"})
     }
-}))
+})
 export default router;
