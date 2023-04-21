@@ -38,10 +38,30 @@ const Customizer = () => {
 
                 />
       case "aipicker":
-        return <AIPicker />
+        return <AIPicker
+          prompt={prompt}
+          setPromopt={setPromopt}
+          generateImg={generateImg}
+          handleSubmit={handleSubmit}
+
+        />
 
       default:
         return null;
+    }
+  }
+
+  const handleSubmit = async (type) => {
+    if(!prompt) return alert("Please enter a prompt");
+
+    try {
+      // call our backend to generate an ai Image
+
+    } catch (error) {
+      alert(error)
+    } finally {
+      setGenerateImg(false);
+      setActiveEditorTab("");
     }
   }
 
@@ -58,6 +78,15 @@ const Customizer = () => {
         state.isFullTexture = false;
 
     }
+
+    // after setting the state, activeFilterTab is updated
+
+    setActiveFilterTab((prevState) => {
+      return {
+        ...prevState,
+        [tabName]: !prevState[tabName]
+      }
+    })
   }
 
   const handleDecals = (type, result) => {
@@ -124,8 +153,8 @@ const Customizer = () => {
             key={tab.name}
             tab={tab}
             isFilterTab
-            isActiveTab=""
-            handleClick={()=>{}}
+            isActiveTab={activeFilterTab[tab.name]}
+            handleClick={()=> handleActiveFilterTab(tab.name)}
 
           />
           ))}
