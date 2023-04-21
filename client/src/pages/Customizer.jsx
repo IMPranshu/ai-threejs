@@ -14,6 +14,33 @@ const Customizer = () => {
 
   const snap = useSnapshot(state);
 
+  const [file, setFile] = useState('');
+
+  const [prompt, setPromopt] = useState('');
+  const [generateImg, setGenerateImg] = useState('');
+
+  const [activeEditorTab, setActiveEditorTab] = useState('');
+  const [activeFilterTab, setActiveFilterTab] = useState('');
+
+
+  // handle upload file
+
+  // show tab content depending on the active tab
+  const generateTabContent = () => {
+    switch(activeEditorTab){
+      case "colorpicker":
+        return <ColorPicker />
+      case "filepicker":
+        return <FilePicker />
+      case "aipicker":
+        return <AIPicker />
+
+      default:
+        return null;
+    }
+
+  }
+
   return (
     <AnimatePresence>
       {!snap.intro && (
@@ -29,10 +56,11 @@ const Customizer = () => {
                 <Tab
                   key={tab.name}
                   tab={tab}
-                  handleClick={()=>{}}
+                  handleClick={()=>setActiveEditorTab(tab.name)}
 
                 />
               ))}
+              {generateTabContent()}
             </div>
 
           </div>
