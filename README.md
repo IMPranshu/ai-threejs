@@ -6,6 +6,19 @@ https://user-images.githubusercontent.com/43396684/233624519-8b3dcc61-74ea-4d76-
 
 A ThreeJS powered 3D product website infused with the power of artificial intelligence! using CHATGPT.
 
+## Features
+
+- A 3D view of the T-Shirt.
+
+- Color Picker for choosing color & realtime view of the changing of colour.
+
+- File Upload functionality to use custom logo/design.
+
+- CHATGPT integration to run custom queries to make unique design
+
+- Download feature to export your unique design and share it with the world
+
+
 ## Technologies used
 
 - ThreeJS - a powerful 3D graphics library for rendering and animating the 3D model
@@ -18,7 +31,6 @@ A ThreeJS powered 3D product website infused with the power of artificial intell
 
 - CHATGPT API - Generate and use images through DALLE AI
 
-- Export - Download the resulting t-shirt model image
 
 ## Application Used
 
